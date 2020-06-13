@@ -1,25 +1,19 @@
-mod queue;
-use queue::Queue;
+mod stack;
+use stack::Stack;
 
 fn main() {
-    let items = vec![1,2,3,4,5];
-    let mut queue = Queue::from_vec(items);
+    let mut stack = Stack::new();
+    println!("Size : {}", stack.size());
     
-    // let mut queue:Queue<i32> = Queue::new();
-    // queue.enqueue(5);
-    // queue.enqueue(6);
+    stack.add(1);
+    stack.add(2);
+    stack.add(3);
     
-    println!("{}", queue.dequeue().unwrap());
-    println!("{}", queue.dequeue().unwrap());
-    println!("{}", queue.size());
+    println!("Size : {}", stack.size());
+    println!("Item : {:?}", stack.remove());
+    println!("Item : {:?}", stack.remove());
+    println!("Item : {:?}", stack.remove());
     
-    queue.enqueue(10);
-    queue.enqueue(20);
-    
-    
-    
-    println!("{}", queue.size());
-    println!("{}", queue.dequeue().unwrap());
-    println!("{}", queue.peek().unwrap());
-    
+    println!("Peeking {:?}", stack.peek());
+    println!("Size : {}", stack.size());
 }

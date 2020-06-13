@@ -1,26 +1,24 @@
-use std::vec::Vec;
-
-pub struct Queue<T : Clone> {
+pub struct Queue<T: Clone> {
     items: Vec<T>
 }
 
-impl<T : Clone> Queue<T> {
+impl<T: Clone> Queue<T> {
     pub fn new() -> Queue<T> {
         Queue { items: Vec::new() }
     }
-    
-    pub fn from_vec(list : Vec<T>) -> Queue<T> {
+
+    pub fn from_vec(list: Vec<T>) -> Queue<T> {
         let mut clone = list.clone();
         clone.reverse();
-        Queue { items : clone }
+        Queue { items: clone }
     }
-    
+
     pub fn peek(&mut self) -> Option<T> {
         self.items
             .last()
             .map(|x| x.clone())
     }
-    
+
     pub fn size(&mut self) -> usize {
         self.items.len()
     }
@@ -30,7 +28,7 @@ impl<T : Clone> Queue<T> {
     }
 
     pub fn dequeue(&mut self) -> Option<T> {
-        self.items.pop().clone() 
+        self.items.pop().clone()
     }
 }    
 
