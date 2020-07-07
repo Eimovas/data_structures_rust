@@ -1,19 +1,17 @@
+use crate::string_builder::StringBuilder;
+
+mod string_builder;
 mod stack;
-use stack::Stack;
+mod queue;
 
 fn main() {
-    let mut stack = Stack::new();
-    println!("Size : {}", stack.size());
-    
-    stack.add(1);
-    stack.add(2);
-    stack.add(3);
-    
-    println!("Size : {}", stack.size());
-    println!("Item : {:?}", stack.remove());
-    println!("Item : {:?}", stack.remove());
-    println!("Item : {:?}", stack.remove());
-    
-    println!("Peeking {:?}", stack.peek());
-    println!("Size : {}", stack.size());
+    let mut sb = StringBuilder::new();
+    sb.append(String::from("Algis"));
+    sb.append(String::from(" "));
+    sb.append(String::from("nori"));
+    sb.append(String::from(" "));
+    sb.append(String::from("valgyt"));
+
+    let str = sb.to_string();
+    println!("{}", str);
 }
