@@ -1,17 +1,16 @@
+mod linked_list;
+
 use crate::string_builder::StringBuilder;
+use std::collections::LinkedList;
 
 mod string_builder;
 mod stack;
 mod queue;
 
 fn main() {
-    let mut sb = StringBuilder::new();
-    sb.append(String::from("Algis"));
-    sb.append(String::from(" "));
-    sb.append(String::from("nori"));
-    sb.append(String::from(" "));
-    sb.append(String::from("valgyt"));
+    let ll : LinkedList<i32> = LinkedList::new();
 
-    let str = sb.to_string();
+    ll.ba
+
     println!("{}", str);
 }
